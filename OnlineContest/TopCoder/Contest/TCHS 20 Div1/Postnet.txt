@@ -1,0 +1,56 @@
+PROBLEM STATEMENT
+5, 9 and 11 digit zip codes on presorted US mail are generally encoded using Postnet barcodes. 
+ Each digit is represented by a sequence of 5 bars, where each bar is either high or low.  
+ The barcode representations for the digits 0 - 9 are as follows:
+  0      1     2     3     4     5     6     7     8     9   
+ HHLLL LLLHH LLHLH LLHHL LHLLH LHLHL LHHLL HLLLH HLLHL HLHLL 
+
+The format of a Postnet barcode is as follows: a single high bar followed by the 
+barcode digits of the zip code, followed by a barcode checksum digit, followed by a single high bar.  
+To calculate the checksum, first add up all the digits of the zip code.  
+The checksum is the digit that must be added to that sum to make it an even multiple of 10.  
+For example, if the digits of a zip code summed to 33, the checksum would be 7.
+
+Given a string zipCode return its Postnet barcode representation.
+
+DEFINITION
+Class:Postnet
+Method:barcode
+Parameters:string
+Returns:string
+Method signature:string barcode(string zipCode)
+
+
+CONSTRAINTS
+-zipCode will contain exactly 5, 9 or 11 digits ('0'-'9').
+
+
+EXAMPLES
+
+0)
+"12345"
+
+Returns: "HLLLHHLLHLHLLHHLLHLLHLHLHLLHLHLH"
+
+Notice, the barcode starts and ends with a high bar.  The return also includes the checksum digit as the final barcode digit before the closing high bar.  The checksum is 5 (1 + 2 + 3 + 4 + 5 = 15)  5 must be added to 15 to make it an even multiple of 10.
+
+1)
+"94070"
+
+Returns: "HHLHLLLHLLHHHLLLHLLLHHHLLLHHLLLH"
+
+
+
+2)
+"11111"
+
+Returns: "HLLLHHLLLHHLLLHHLLLHHLLLHHLHLHLH"
+
+
+
+3)
+"12348"
+
+Returns: "HLLLHHLLHLHLLHHLLHLLHHLLHLLLHLHH"
+
+

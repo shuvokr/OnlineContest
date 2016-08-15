@@ -1,0 +1,66 @@
+PROBLEM STATEMENT
+At the carnival this year, there is a contest to determine the best surname.  
+One lucky winner will receive a prize.  Each surname is assigned a score which is the 
+sum of the ASCII values of all its characters.  You will be given a vector <string> surnames, 
+where each element contains only uppercase letters ('A'-'Z').  
+Return the 0-based index of the surname in surnames with the highest score.  
+In case of a tie, return the one with the lowest index.
+
+The ASCII values for uppercase letters are 'A' = 65, 'B' = 66, ..., 'Z' = 90 (which are the integer values of the characters).
+
+
+DEFINITION
+Class:Surname
+Method:bestSurname
+Parameters:vector <string>
+Returns:int
+Method signature:int bestSurname(vector <string> surnames)
+
+
+CONSTRAINTS
+-surnames will contain between 1 and 10 elements, inclusive.
+-Each element of surnames will contain between 1 and 20 characters, inclusive.
+-surnames will contain only uppercase letters ('A'-'Z').
+
+
+EXAMPLES
+
+0)
+{"JONES", "WILLIAMS", "SMITH", "HARPER"}
+
+Returns: 1
+
+The values assigned to these strings are as follows:
+JONES = 74 + 79 + 78 + 69 + 83 = 383
+WILLIAMS = 87 + 73 + 76 + 76 + 73 + 65 + 77 + 83 = 610
+SMITH = 83 + 77 + 73 + 84 + 72 = 389
+HARPER = 72 + 65 + 82 + 80 + 69 + 82 = 450
+WILLIAMS is assigned the highest score and its index is returned.
+
+1)
+{"JOHNSON", "CHU", "LOPEZ", "SCAFFIDI", "PASQUALE", "KRUMME"}
+
+Returns: 4
+
+
+
+2)
+{"ABA", "BAA", "CAB", "BAC"}
+
+Returns: 2
+
+"CAB" and "BAC" have the same ASCII sum.  "CAB" is chosen because it has the lower index.
+
+3)
+{"BOHR", "FRANKLIN", "TESLA", "NEWTON", "EDISON", "FARNSWORTH", "GUTENBERG", "HOOVER", "MARCONI", "EINSTEIN"}
+
+Returns: 5
+
+
+
+4)
+{"BABBAGE", "BOOLE", "BRESENHAM", "TURING", "DIJKSTRA", "BACKUS", "FLOYD", "KERNIGHAN", "BOOCH", "NEUMANN"}
+
+Returns: 7
+
+
